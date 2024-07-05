@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="=X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택 박스 값 받아오기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            max-width: 400px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>선택 박스 값 받아오기 예제</h2>
+        <label for="floorSelect">층 선택:</label>
+        <select id="floorSelect">
+            <option value="none">=== 선택 ===</option>
+            <option value="all">전체</option>
+            <option value="first_floor">1층</option>
+            <option value="second_floor">2층</option>
+            <option value="third_floor">3층</option>
+            <option value="fourth_floor">4층</option>
+        </select>
+        <button onclick="getSelectedValue()">값 가져오기</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function getSelectedValue() {
+            var selectElement = document.getElementById('floorSelect');
+            var selectedValue = selectElement.value;
+
+            if (selectedValue === 'all') {
+                document.getElementById('result').textContent = '선택한 층: ' + selectedValue;}
+            else if (selectedValue === 'first_floor') {
+                document.getElementById('result').textContent = '선택한 층: ' + selectedValue;}
+            else if (selectedValue === 'second_floor') {
+                document.getElementById('result').textContent = '선택한 층: ' + selectedValue;}
+            else if (selectedValue === 'third_floor') {
+                document.getElementById('result').textContent = '선택한 층: ' + selectedValue;}
+            else if (selectedValue === 'fourth_floor') {
+                document.getElementById('result').textContent = '선택한 층: ' + selectedValue;} 
+            else {
+                document.getElementById('result').textContent = '층을 선택해주세요.';}
+        }
+    </script>
+</body>
+</html>
