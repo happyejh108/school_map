@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+}
+#list {
+    list-style-type: none;
+    padding: 0;
+}
+#list li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#list li img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}

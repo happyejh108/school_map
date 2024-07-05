@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치 추적 및 지도 업데이트</title>
+</head>
+<body>
+    <div id="details"></div>
+    <div id="map"></div>
+    <p id="w">현재 위치 표시</p>
+    <button onclick="startTracking()">지도상에 내위치 찾기</button>
+    <p><br /></p>
+    <div id="x"></div>
+
+    <script>
+        var reqcount = 0;
+        var watchId = null;
+
+        function startTracking() {
+            if (watchId === null) {
+                watchId = navigator.geolocation.watchPosition(successCallback, errorCallback, options);
+            }
+        }
+
+        function successCallback(position) {
+            const { accuracy, latitude, longitude } = position.coords;
+            reqcount++;
+            document.getElementById('details').innerHTML = "Accuracy: " + accuracy + "<br>";
+            document.getElementById('details').innerHTML += "Latitude: " + latitude + " | Longitude: " + longitude + "<br>";
+            document.getElementById('details').innerHTML += "Request count: " + reqcount;
+            document.getElementById('map').innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&amp;z=15&amp;output=embed"></iframe>';
+        }
+
+        function errorCallback(error) {
+            console.error("Error occurred. Error code: " + error.code);
+        }
+
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+    </script>
+</body>
+</html>
