@@ -1,0 +1,19 @@
+1. Main 영역 생성
+ ⅰ "psvm" + Enter
+ ⅱ "main" + Enter
+
+2. System.out.println():
+ = "Sout" + Enter
+
+3. 자료형 변수
+ Ⅰ 정수형 변수
+  ⅰ int > 범위 : about -21억 ~ 21억 >> long
+  ⅱ long > 기본적으로 정수는 int로 인식하기에 ~L을 입력
+ Ⅱ 실수형 변수
+  ⅰ float > but, 크거나 정밀한 데이터 입력 불가 >> ~F or ~f 적기 (but, 소수점 7자리부터 값 변질)
+  ⅱ double > 실수형 변수 선언
+ Ⅲ 문자열 변수
+  ⅰ char > 한 글자 문자 변수 선언 >> 작은 따옴표
+  ⅱ String > 큰 따옴표
+ Ⅳ 불리안 변수
+  : boolean 
